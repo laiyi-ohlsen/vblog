@@ -1,1 +1,24 @@
 {% extends "base.njk" %}
+
+{% block content %}
+<a href="/" class="back-link">← back</a>
+<h2>{{ title }}</h2>
+{% set images = content | extractImages %}
+{% if images.length > 0 %}
+<div class="carousel" data-carousel>
+  <div class="carousel-track">
+    {% for img in images %}
+    <img src="{{ img }}" alt="">
+    {% endfor %}
+  </div>
+  {% if images.length > 1 %}
+  <div class="carousel-nav">
+    <button class="carousel-btn prev" data-prev>&#8249;</button>
+    <span class="carousel-counter"><span data-current>1</span> / {{ images.length }}</span>
+    <button class="carousel-btn next" data-next>&#8250;</button>
+  </div>
+  {% endif %}
+</div>
+{% endif %}
+{{ content | removeImages | safe }}
+{% endblock %}
