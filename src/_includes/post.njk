@@ -1,7 +1,9 @@
 {% extends "base.njk" %}
 
 {% block content %}
+<div class="back-link-container">
 <a href="/" class="back-link">← back</a>
+</div>
 <h2>{{ title }}</h2>
 {% set images = content | extractImages %}
 {% if images.length > 0 %}

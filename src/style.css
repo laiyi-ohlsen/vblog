@@ -42,6 +42,12 @@ a.active-nav {
   font-weight: bold;
 }
 
+/* ========== Back Link ========== */
+.back-link-container {
+  display: block;
+  margin-top: 1.5em;
+}
+
 /* ========== Typography ========== */
 h1 {
   font-size: 24pt; 
